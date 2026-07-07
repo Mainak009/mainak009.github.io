@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installation Guide — How to Restore ROG Ally with EverAlly ISO</title>
+<meta name="description" content="Step-by-step guide to flash the EverAlly cloud recovery offline backup ISO using Rufus and restore your ROG Ally, Ally X, or Xbox Ally handheld.">
+<meta name="keywords" content="Cloud recovery iso, ally cloud recovery iso, ally factory recovery media, cloud recovery offline backup, ally cloud recovery offline backup, ally x cloud recovery iso, ally x factory recovery media, ally x cloud recovery offline backup, xbox ally x cloud recovery iso, xbox ally x factory recovery media, xbox ally x cloud recovery offline backup, xbox ally cloud recovery iso, xbox ally factory recovery media, xbox ally cloud recovery offline backup">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mainak009.github.io/guide.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mainak009.github.io/guide.html">
+<meta property="og:title" content="Installation Guide — How to Restore ROG Ally with EverAlly ISO">
+<meta property="og:description" content="Step-by-step guide to flash the EverAlly cloud recovery offline backup ISO using Rufus and restore your ROG Ally, Ally X, or Xbox Ally handheld.">
+<meta property="og:image" content="https://mainak009.github.io/images/logo.webp">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mainak009.github.io/guide.html">
+<meta property="twitter:title" content="Installation Guide — How to Restore ROG Ally with EverAlly ISO">
+<meta property="twitter:description" content="Step-by-step guide to flash the EverAlly cloud recovery offline backup ISO using Rufus and restore your ROG Ally, Ally X, or Xbox Ally handheld.">
+<meta property="twitter:image" content="https://mainak009.github.io/images/logo.webp">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Restore your ROG Handheld using EverAlly Recovery ISO",
+  "description": "Learn how to flash the EverAlly recovery ISO to a USB flash drive and perform a full factory restore on your ASUS ROG Ally series handheld.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Prepare the Recovery USB",
+      "text": "Download Rufus and the EverAlly recovery ISO. Open Rufus, select the ISO, set the Partition scheme to GPT, and click START to format and create the bootable drive."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Boot into Recovery Environment",
+      "text": "Insert the USB drive into your powered-off ROG handheld. Hold the Volume Up button and press Power. In the boot menu, select the USB recovery drive."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Run Factory Installation",
+      "text": "Once the recovery environment boots, follow the on-screen installer prompts by pressing the A button to begin SSD partitioning and recovery file copy."
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/webp" href="images/logo.webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="corner-blobs">
+  <div class="blob blob-tl"></div>
+  <div class="blob blob-tr"></div>
+  <div class="blob blob-bl"></div>
+  <div class="blob blob-br"></div>
+</div>
+<div class="grain"></div>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="images/logo.webp" class="logo-img" alt="EverAlly Logo">
+    EverAlly
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="download.html">Download</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="guide.html" class="active">Guide</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+</header>
+
+<main>
+  <div class="page-intro">
+    <h1>Installation <span class="accent">Guide</span></h1>
+    <p>
+      Follow these step-by-step instructions to create a bootable USB recovery drive and restore your ROG handheld.
+    </p>
+  </div>
+
+  <div class="boxes-section">
+    <div class="boxes-grid">
+
+      <!-- Box 1: Prepare USB -->
+      <div class="box">
+        <div class="box-meta">
+          <div class="box-number">01</div>
+          <h2>Prepare the Recovery USB</h2>
+        </div>
+        <div class="box-content">
+          <p>
+            Before you begin, you need to prepare the recovery media on a Windows PC. You will need a USB flash drive (ensure any important data is backed up, as the drive will be formatted).
+          </p>
+          <ol>
+            <li>Go to the official <a href="https://rufus.ie" target="_blank" rel="noopener noreferrer" class="box-accent">Rufus Website</a> to download the portable application (installation is not required).</li>
+            <li>Download the EverAlly recovery ISO file matching your device model (e.g., Ally, Ally X, Xbox Ally, or Xbox Ally X) to your PC.</li>
+            <li>Insert your USB flash drive into your computer and launch Rufus. Rufus will automatically detect your USB drive under the <strong>Device</strong> section. Ensure the correct drive is selected.</li>
+            <li>Under <strong>Boot selection</strong>, click the <strong>SELECT</strong> button, then browse your computer and choose the recovery ISO file you downloaded.</li>
+            <li>Configure the partition settings: select <strong>GPT</strong> for the Partition scheme, and leave all other options on their default settings.</li>
+            <li>Click the <strong>START</strong> button at the bottom. A warning will pop up letting you know all data on the USB will be formatted. Click <strong>OK</strong> to proceed, and wait for the progress bar to complete and the status to change to <strong>READY</strong>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Box 2: Boot & Recover -->
+      <div class="box">
+        <div class="box-meta">
+          <div class="box-number">02</div>
+          <h2>Boot & Recover your Handheld</h2>
+        </div>
+        <div class="box-content">
+          <p>
+            Make sure your ROG handheld is connected to a power source or has at least <strong>50% battery charge</strong> before starting the installation.
+          </p>
+          <ol>
+            <li>Eject the USB flash drive from your PC and insert it into your ROG handheld.</li>
+            <li>Power off your handheld completely. Then, Power on and when the ROG animation starts press and hold the <strong>Volume Up</strong> button until the Boot Menu appears.</li>
+            <li>Use the D-Pad of your handheld to navigate and select the USB recovery drive from the boot list, then press the <strong>A</strong> button to select it.</li>
+            <li>Once the recovery environment boots, it will open the local installer script. Press the <strong>A</strong> button to start the installation.</li>
+          </ol>
+          <div class="warning-note">
+            <div class="warning-title">Warning</div>
+            Pressing the A button will completely wipe the internal SSD of your device. Please make sure you have backed up any important files before proceeding.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  Built for hardware that shouldn't have an expiration date.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
