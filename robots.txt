@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mainak009.github.io/sitemap.xml
+Sitemap: https://everally.top /sitemap.xml
