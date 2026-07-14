@@ -186,7 +186,7 @@
               </div>
             </li>
             <li><strong>Interrupt Reboot:</strong> Once the download completes, the system will auto-reboot. To prevent it from booting into the OS, hold the <strong>Volume Up</strong> button during the startup animation to access the Boot Menu. Select and boot from your Rescuezilla USB.</li>
-            <li><strong>Perform Backup:</strong> Follow the instructions in the video walkthrough below to create a full image backup of your internal SSD to your external storage or a local NAS.
+            <li><strong>Perform Backup:</strong> After booting into Rescuezilla follow the instructions in the video walkthrough below to create a full image backup of your internal SSD to your external storage or a local NAS.
               <div class="video-container">
                 <video controls preload="metadata">
                   <source src="video/Ally%20Rescuezilla%20Backup.mp4" type="video/mp4">
@@ -267,6 +267,14 @@
   </div>
 </div>
 
+<!-- Image Lightbox Modal -->
+<div id="lightboxModal" class="modal-overlay" aria-hidden="true" style="background: rgba(0, 0, 0, 0.95); z-index: 1100;">
+  <div class="modal-container" style="max-width: 90vw; max-height: 90vh; background: transparent; border: none; box-shadow: none; padding: 0; display: flex; align-items: center; justify-content: center; position: relative;">
+    <button class="modal-close" id="lightboxClose" aria-label="Close modal" style="top: -40px; right: 0; color: #ffffff; font-size: 36px; background: none; border: none; cursor: pointer;">&times;</button>
+    <img id="lightboxImg" src="" alt="Zoomed Screenshot" style="max-width: 100%; max-height: 85vh; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); object-fit: contain;">
+  </div>
+</div>
+
 <footer>
   Built for hardware that shouldn't have an expiration date.
 </footer>
@@ -308,6 +316,53 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && submitModal.classList.contains('active')) {
         closeModal();
+      }
+    });
+  }
+
+  // Lightbox Modal Logic
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const stepImages = document.querySelectorAll('.contributor-images img');
+
+  if (lightboxModal && lightboxImg && stepImages.length > 0) {
+    const openLightbox = (src, alt) => {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxModal.classList.add('active');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
+    };
+
+    const closeLightbox = () => {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // Unlock background scrolling
+    };
+
+    stepImages.forEach(img => {
+      img.style.cursor = 'zoom-in'; // Pointer cue for zoomability
+      img.addEventListener('click', () => {
+        openLightbox(img.src, img.alt);
+      });
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    // Close when clicking overlay backdrop or anywhere outside the image
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        closeLightbox();
+      }
+    });
+
+    // Close on Esc key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        closeLightbox();
       }
     });
   }
