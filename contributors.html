@@ -157,6 +157,17 @@
         </div>
       </div>
 
+      <!-- Warning Banner -->
+      <div class="warning-banner" style="border: 1px solid var(--magenta); border-left: 4px solid var(--magenta); padding: 20px 24px; background: rgba(255, 61, 154, 0.03); border-radius: 12px; display: flex; gap: 16px; align-items: center; max-width: 100%; opacity: 0; animation: card-fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.16s;">
+        <svg style="width: 24px; height: 24px; color: var(--magenta); flex-shrink: 0;" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+        </svg>
+        <div style="font-size: 14px; line-height: 1.6; color: var(--text-1);">
+          <strong style="color: var(--magenta); font-family: var(--display); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Data Loss Warning</strong>
+          Following this guide will wipe your internal SSD. Make sure to back up all important data or use a spare SSD before proceeding.
+        </div>
+      </div>
+
       <!-- Box 2: Instructions -->
       <div class="box">
         <div class="box-meta">
@@ -187,7 +198,7 @@
 
           <div class="warning-note">
             <div class="warning-title">Important Note</div>
-            Do not allow the system to boot into the operating system after Step 5. If it boots, the file expansion process will begin, rendering the backup invalid. If this happens, you must restart the process from the beginning.
+            Do not allow the system to boot into the operating system after <strong>Step 5</strong>. If it boots, the file expansion process will begin, rendering the backup invalid. If this happens, you must restart the process from the beginning.
           </div>
         </div>
       </div>
