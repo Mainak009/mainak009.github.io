@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contributors Guide — How to Backup ROG Ally Cloud Recovery Media</title>
+<meta name="description" content="Help the EverAlly community. Learn how to backup your ROG Ally factory recovery files using Rescuezilla and submit them to help add support for new devices.">
+<meta name="keywords" content="Cloud recovery iso, ally cloud recovery iso, ally factory recovery media, cloud recovery offline backup, ally cloud recovery offline backup, ally x cloud recovery iso, ally x factory recovery media, ally x cloud recovery offline backup, xbox ally x cloud recovery iso, xbox ally x factory recovery media, xbox ally x cloud recovery offline backup, xbox ally cloud recovery iso, xbox ally factory recovery media, xbox ally cloud recovery offline backup">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://everally.top/contributors">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://everally.top/contributors">
+<meta property="og:title" content="Contributors Guide — How to Backup ROG Ally Cloud Recovery Media">
+<meta property="og:description" content="Help the EverAlly community. Learn how to backup your ROG Ally factory recovery files using Rescuezilla and submit them to help add support for new devices.">
+<meta property="og:image" content="https://everally.top/images/logo.webp">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://everally.top/contributors">
+<meta property="twitter:title" content="Contributors Guide — How to Backup ROG Ally Cloud Recovery Media">
+<meta property="twitter:description" content="Help the EverAlly community. Learn how to backup your ROG Ally factory recovery files using Rescuezilla and submit them to help add support for new devices.">
+<meta property="twitter:image" content="https://everally.top/images/logo.webp">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Backup ROG Ally Factory Recovery Media for EverAlly",
+  "description": "Learn how to backup your ASUS ROG Ally factory recovery files using Rescuezilla to contribute to the EverAlly community project.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter BIOS",
+      "text": "Boot into the BIOS, navigate to Advanced Mode (Y) > Advanced tab, and select Cloud Recovery."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Initialize Recovery",
+      "text": "Connect to Wi-Fi and allow the system to download and boot into the Cloud Recovery environment."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Download Factory Media",
+      "text": "Reconnect to Wi-Fi to begin downloading the factory recovery installation files (approximately 17-19 GB)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Prepare Rescuezilla",
+      "text": "While the recovery files are downloading, use a separate computer to download Rescuezilla and create a bootable USB drive."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Interrupt Reboot",
+      "text": "Once the download completes, the system will auto-reboot. Prevent it from booting into the OS by holding the Volume Up button during startup to access the Boot Menu, then boot from the Rescuezilla USB."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Perform Backup",
+      "text": "Follow the Rescuezilla backup walkthrough to create a full image backup of your internal SSD to your external storage."
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/webp" href="images/favicon.webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="corner-blobs">
+  <div class="blob blob-tl"></div>
+  <div class="blob blob-tr"></div>
+  <div class="blob blob-bl"></div>
+  <div class="blob blob-br"></div>
+</div>
+<div class="grain"></div>
+
+<header>
+  <a href="/" class="logo">
+    <img src="images/logo.webp" class="logo-img" alt="EverAlly Logo">
+    EverAlly
+  </a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="download">Download</a>
+    <a href="about">About</a>
+    <a href="faq">FAQ</a>
+    <a href="guide">Guide</a>
+    <a href="contributors" class="active">Contributors</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+</header>
+
+<main>
+  <div class="page-intro">
+    <h1>Contributors <span class="accent">Guide</span></h1>
+    <p>
+      To bring EverAlly support to the rest of the models, we need Cloud Recovery file backups. It would be great if you could help us!
+    </p>
+  </div>
+
+  <div class="status-container">
+    <div class="status">
+      <div class="status-item">
+        <div class="status-text-group">
+          <span class="label">ROG Ally</span>
+          <span class="value"><span class="status-dot ok"></span>Available</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-text-group">
+          <span class="label">ROG Ally X</span>
+          <span class="value"><span class="status-dot off"></span>Contributors Required</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-text-group">
+          <span class="label">ROG Xbox Ally</span>
+          <span class="value"><span class="status-dot off"></span>Contributors Required</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-text-group">
+          <span class="label">ROG Xbox Ally X</span>
+          <span class="value"><span class="status-dot off"></span>Contributors Required</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="boxes-section">
+    <div class="boxes-grid">
+
+      <!-- Box 1: Prerequisites -->
+      <div class="box">
+        <div class="box-meta">
+          <div class="box-number">01</div>
+          <h2>Prerequisites</h2>
+        </div>
+        <div class="box-content">
+          <p>Before you begin, ensure you have the following hardware setup ready:</p>
+          <ul>
+            <li><span class="box-accent">USB Type-C Hub</span> (to connect your USB drives and charger simultaneously)</li>
+            <li><span class="box-accent">USB Flash Drive</span> (minimum 4GB, dedicated for Rescuezilla bootable media)</li>
+            <li><span class="box-accent">External Storage</span> (USB Flash Drive, SSD, or HDD with at least 32GB free space) to store the recovery image backup</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Box 2: Instructions -->
+      <div class="box">
+        <div class="box-meta">
+          <div class="box-number">02</div>
+          <h2>Backup Instructions</h2>
+        </div>
+        <div class="box-content">
+          <ol>
+            <li><strong>Enter BIOS:</strong> Boot into the BIOS, navigate to <em>Advanced Mode (Y)</em> &gt; <em>Advanced tab</em>, and select <strong>Cloud Recovery</strong>.</li>
+            <li><strong>Initialize Recovery:</strong> Connect to Wi-Fi and allow the system to download and boot into the Cloud Recovery environment.</li>
+            <li><strong>Download Factory Media:</strong> Reconnect to Wi-Fi to begin downloading the factory recovery installation files (approximately 17–19 GB).</li>
+            <li><strong>Prepare Rescuezilla:</strong> While the recovery files are downloading, use a separate computer to download Rescuezilla and create a bootable USB drive.
+              <div class="contributor-images">
+                <img src="images/CR_End_1.webp" alt="Cloud Recovery 100% complete screenshot" class="step-img" loading="lazy">
+                <img src="images/CR_End_2.webp" alt="Cloud Recovery download complete/reboot screen screenshot" class="step-img" loading="lazy">
+              </div>
+            </li>
+            <li><strong>Interrupt Reboot:</strong> Once the download completes, the system will auto-reboot. To prevent it from booting into the OS, hold the <strong>Volume Up</strong> button during the startup animation to access the Boot Menu. Select and boot from your Rescuezilla USB.</li>
+            <li><strong>Perform Backup:</strong> Follow the instructions in the video walkthrough below to create a full image backup of your internal SSD to your external storage or a local NAS.
+              <div class="video-container">
+                <video controls preload="metadata">
+                  <source src="video/Ally%20Rescuezilla%20Backup.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </li>
+          </ol>
+
+          <div class="warning-note">
+            <div class="warning-title">Important Note</div>
+            Do not allow the system to boot into the operating system after Step 5. If it boots, the file expansion process will begin, rendering the backup invalid. If this happens, you must restart the process from the beginning.
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 3: Submit Files -->
+      <div class="box">
+        <div class="box-meta">
+          <div class="box-number">03</div>
+          <h2>Submit Backup</h2>
+        </div>
+        <div class="box-content">
+          <p>
+            Compress to RAR or ZIP the whole Rescuezilla folder before uploading.
+          </p>
+          <div class="cta-row" style="margin-top: 16px; margin-bottom: 0;">
+            <button class="btn-primary" id="openSubmitModalBtn">
+              Submit files →
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Submit Files Modal -->
+<div id="submitModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-container" style="max-width: 680px;">
+    <button class="modal-close" id="submitModalClose" aria-label="Close modal">&times;</button>
+    <div class="modal-header">
+      <h2>Submit Recovery Backup</h2>
+      <p>Fill out the form below to submit your Rescuezilla backup files. You can also open the form directly in a new tab.</p>
+      <div class="cta-row" style="margin-top: 12px; margin-bottom: 20px;">
+        <a href="https://forms.gle/c54zx4SQiBANNzhY8" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 13px; padding: 10px 18px; text-decoration: none;">Open Form in New Tab ↗</a>
+      </div>
+    </div>
+    
+    <!-- Iframe Section -->
+    <div class="form-iframe-wrapper" style="position: relative; width: 100%; height: 480px; border-radius: 12px; border: 1px solid var(--line); overflow: hidden; background: #ffffff; margin-bottom: 20px;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfy_RY7RHzyh6QNg_xUOOLFOlkZ7IpToHUe7uqIJ1cQ48lf6g/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" style="position: absolute; inset: 0; width: 100%; height: 100%; background: #ffffff;">Loading form…</iframe>
+    </div>
+
+    <!-- T&C Message -->
+    <p style="font-size: 12px; color: var(--text-3); line-height: 1.5; margin-bottom: 24px; text-align: center;">
+      By submitting this form, you agree to Google's <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">Terms & Conditions</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">privacy policy</a>.
+    </p>
+
+    <!-- Alternative Contacts Section -->
+    <div style="border-top: 1px solid var(--line); padding-top: 20px;">
+      <h3 style="font-family: var(--display); font-size: 16px; font-weight: 700; color: var(--text-1); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Alternative Submission</h3>
+      <p style="font-size: 13px; color: var(--text-2); margin-bottom: 14px; line-height: 1.5;">
+        If you do not want to submit the form, you can reach out directly below to coordinate the files transfer:
+      </p>
+      <div class="tooltip-contacts" style="background: rgba(255, 255, 255, 0.015); width: 100%;">
+        <div class="tooltip-contact" style="padding: 4px 0;">
+          <strong>Discord:</strong>
+          <code>hacker0009__62660</code>
+        </div>
+        <div class="tooltip-contact" style="padding: 4px 0;">
+          <strong>Telegram:</strong>
+          <code>hacker007</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Built for hardware that shouldn't have an expiration date.
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Submit Modal Logic
+  const openSubmitBtn = document.getElementById('openSubmitModalBtn');
+  const submitModal = document.getElementById('submitModal');
+  const submitCloseBtn = document.getElementById('submitModalClose');
+
+  if (openSubmitBtn && submitModal) {
+    const openModal = () => {
+      submitModal.classList.add('active');
+      submitModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
+    };
+
+    const closeModal = () => {
+      submitModal.classList.remove('active');
+      submitModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // Unlock background scrolling
+    };
+
+    openSubmitBtn.addEventListener('click', openModal);
+
+    if (submitCloseBtn) {
+      submitCloseBtn.addEventListener('click', closeModal);
+    }
+
+    // Close when clicking overlay backdrop
+    submitModal.addEventListener('click', (e) => {
+      if (e.target === submitModal) {
+        closeModal();
+      }
+    });
+
+    // Close on Esc key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && submitModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -71,34 +71,24 @@ const visual = document.getElementById('visual');
 
   // Cursor-tracking tooltip for unavailable devices on Download page
   const downloadCards = document.querySelectorAll('.download-card');
-  const hasDisabledBtn = Array.from(downloadCards).some(card => card.querySelector('.btn-download.disabled'));
+  const hasContributeBtn = Array.from(downloadCards).some(card => card.querySelector('.btn-download.btn-contribute'));
 
-  if (downloadCards.length > 0 && hasDisabledBtn) {
+  if (downloadCards.length > 0 && hasContributeBtn) {
     // Create tooltip element
     const tooltip = document.createElement('div');
     tooltip.className = 'cursor-tooltip';
     tooltip.innerHTML = `
       <div class="tooltip-title">Contributors Needed</div>
-      <p class="tooltip-text">We require ASUS cloud recovery backup files to make support for this device possible. If you own this handheld and would like to contribute, please reach out to us:</p>
-      <div class="tooltip-contacts">
-        <div class="tooltip-contact">
-          <strong>Discord:</strong>
-          <code>hacker0009__62660</code>
-        </div>
-        <div class="tooltip-contact">
-          <strong>Telegram:</strong>
-          <code>hacker007</code>
-        </div>
-      </div>
+      <p class="tooltip-text">We require ASUS cloud recovery backup files to make support for this device possible. If you own this handheld and would like to contribute, click contribute to know more</p>
     `;
     document.body.appendChild(tooltip);
 
     downloadCards.forEach(card => {
-      const isDisabled = card.querySelector('.btn-download.disabled');
-      if (isDisabled) {
+      const isContribute = card.querySelector('.btn-download.btn-contribute');
+      if (isContribute) {
         card.addEventListener('mousemove', (e) => {
           const tooltipWidth = tooltip.offsetWidth || 320;
-          const tooltipHeight = tooltip.offsetHeight || 140;
+          const tooltipHeight = tooltip.offsetHeight || 100;
 
           let x = e.pageX + 15;
           let y = e.pageY + 15;
@@ -138,7 +128,7 @@ const visual = document.getElementById('visual');
     document.addEventListener('pointerdown', (e) => {
       let touchedCard = false;
       downloadCards.forEach(card => {
-        if (card.contains(e.target) && card.querySelector('.btn-download.disabled')) {
+        if (card.contains(e.target) && card.querySelector('.btn-download.btn-contribute')) {
           touchedCard = true;
         }
       });

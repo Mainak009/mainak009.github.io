@@ -347,6 +347,15 @@
     display:inline-block;
   }
 
+  .value.off::before{
+    content:'';
+    width:6px; height:6px;
+    border-radius:50%;
+    background:#2b2c3a;
+    box-shadow:none;
+    display:inline-block;
+  }
+
   /* ---- visual side (right): dual console showcase ---- */
   .visual{
     position:relative;
@@ -906,6 +915,50 @@
   .btn-download.disabled:hover{
     transform:none;
     box-shadow:none;
+  }
+
+  .btn-download.btn-contribute {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: var(--text-3) !important;
+    border: 1px solid var(--line) !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important; /* unclickable by default */
+  }
+
+  .btn-download.btn-contribute .text-contribute,
+  .btn-download.btn-contribute .icon-arrow {
+    display: none !important;
+  }
+
+  .btn-download.btn-contribute .text-coming,
+  .btn-download.btn-contribute .icon-lock {
+    display: inline-flex !important;
+  }
+
+  /* Card hover state: turns into clickable green Contribute button */
+  .download-card:hover .btn-download.btn-contribute {
+    background: linear-gradient(135deg, #4fd88a, #27ae60) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 12px rgba(79, 216, 138, 0.15) !important;
+    cursor: pointer !important;
+    pointer-events: auto !important; /* clickable on hover! */
+  }
+
+  .download-card:hover .btn-download.btn-contribute:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(79, 216, 138, 0.35) !important;
+  }
+
+  .download-card:hover .btn-download.btn-contribute .text-coming,
+  .download-card:hover .btn-download.btn-contribute .icon-lock {
+    display: none !important;
+  }
+
+  .download-card:hover .btn-download.btn-contribute .text-contribute,
+  .download-card:hover .btn-download.btn-contribute .icon-arrow {
+    display: inline-flex !important;
   }
 
   .icon-download{
@@ -1583,4 +1636,151 @@
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       padding-top: 12px;
       margin-top: 4px;
+    }
   }
+
+/* ---- contributors page custom styles ---- */
+.contributor-images {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+  width: 100%;
+}
+
+.contributor-images .step-img {
+  flex: 1;
+  width: 50%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.contributor-images .step-img:hover {
+  transform: translateY(-4px);
+  border-color: rgba(57, 215, 240, 0.4);
+  box-shadow: 0 12px 32px rgba(57, 215, 240, 0.25);
+}
+
+@media (max-width: 600px) {
+  .contributor-images {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contributor-images .step-img {
+    width: 100%;
+  }
+}
+
+/* Video Container Styling */
+.video-container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 680px;
+  margin: 24px 0;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+  border-color: rgba(255, 61, 154, 0.35);
+  box-shadow: 0 12px 32px -8px rgba(255, 61, 154, 0.25);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 clamp(24px, 5vw, 72px) 60px;
+  max-width: 1200px;
+  margin: -36px auto 0;
+}
+
+.status-container .status {
+  text-align: left;
+}
+
+/* Hide the default pseudo-element dot inside contributors status values */
+.status-container .value::before {
+  display: none !important;
+}
+
+/* Style the new standalone status-dot */
+.status-dot {
+  position: absolute;
+  right: 100%;
+  margin-right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-dot.ok {
+  background: #4fd88a;
+  box-shadow: 0 0 6px #4fd88a;
+}
+
+.status-dot.off {
+  background: #2b2c3a;
+  box-shadow: none;
+}
+
+/* Layout for the status item */
+.status-container .status-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  position: relative !important;
+  padding-left: 14px !important; /* Make room for absolute dot on left */
+}
+
+/* The text group column (label + value) */
+.status-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Left-align the text group contents on both PC and Mobile */
+.status-container .status-text-group {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Make value relative to anchor the absolute dot */
+.status-container .value {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.status-item .value {
+  white-space: nowrap;
+}
+
+@media (max-width: 880px) {
+  .status-container .status {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    gap: 20px !important;
+    padding: 20px 24px !important;
+  }
+}

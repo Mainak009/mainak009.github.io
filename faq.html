@@ -31,10 +31,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is this file safe to download and install?",
+      "name": "Is this file safe to download and install? ☆",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. This Offline Cloud Recovery is built entirely from an original ASUS Cloud Recovery backup. We wrote the scripts to recreate the exact same factory partition layout and file staging that ASUS's own tool produces with no custom modifications to system files."
+        "text": "Yes. This Offline Cloud Recovery is built entirely from an original ASUS Cloud Recovery backup — we wrote the scripts to recreate the exact same factory partition layout and file staging that ASUS's own tool produces. Every file on the ISO comes directly from ASUS with no modifications. We don't touch, patch, or replace any ASUS or Windows system files."
       }
     },
     {
@@ -42,7 +42,7 @@
       "name": "What is the purpose of this tool?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ASUS locks cloud recovery access after 1-3 years depending on your region. This tool brings the full Cloud Recovery experience offline, restoring your device to the exact original ASUS factory state automatically without an internet connection."
+        "text": "ASUS provides Cloud Recovery to restore your ROG Ally to factory condition, but access expires after 1-3 years depending on your region. After that, the only official option is manually installing Windows and all drivers yourself — a tedious, time-consuming process. This tool brings the full Cloud Recovery experience offline, restoring your device to the exact original ASUS factory state automatically, without an internet connection, and without any manual driver work."
       }
     },
     {
@@ -50,7 +50,95 @@
       "name": "Will this work on my ROG Ally?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This tool is built from and tested on the ROG Ally (RC71L). It has been verified to work end-to-end on real hardware. ROG Ally X, ROG XBOX Ally, and ROG XBOX Ally X support is being worked on separately."
+        "text": "This tool is built from and tested on the ROG Ally (RC71L). It has been verified to work end-to-end on real hardware. ROG Ally X (RC71X), ROG XBOX Ally (RC73YA) and ROG XBOX Ally X (RC73XA) support is being worked on separately — check back later for updates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this wipe my data? ☆",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely. This tool performs a full factory restore — it wipes the entire internal SSD and rebuilds it from scratch. Back up anything you want to keep before running this. There is no going back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my dual boot setup be preserved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This tool performs a complete wipe on the entire internal SSD and rebuilds the exact ASUS factory partition layout from scratch. Any existing partitions — including a Linux or secondary Windows installation — will be permanently deleted. If you have a dual boot setup, make sure to back up anything important before running this. There is no way to recover a wiped partition after the tool runs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My cloud recovery expired or my device says it can't connect. Can this help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, that's exactly what this is for. ASUS locks cloud recovery access after 1-3 years depending on your region. This tool restores your device to factory condition offline, with no internet connection required at any point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I create a bootable USB drive and boot from it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Download Rufus. Open Rufus, select the downloaded .iso file, choose your USB drive, leave settings at default, and click Start. Once it finishes, plug the USB into your ROG Ally, then power on and when the ROG animation appears press and hold the Volume Up button to open the boot menu, and select your USB drive from the list. Other tools that also work: Balena Etcher and Ventoy. Note: Writing the ISO will erase everything currently on the USB drive — double-check you've selected the right drive before starting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size USB drive do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minimum 32GB. 64GB or larger is recommended for comfortable headroom. Smaller drives will not fit the recovery image."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to disable Secure Boot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The recovery ISO is signed to boot correctly with Secure Boot enabled on the ROG Ally. Make sure your BIOS is updated to the latest version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the recovery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roughly 30-60 minutes depending on your USB drive's read speed and your SSD's write speed. Don't power off or remove the USB until the tool tells you to disconnect it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My device restarted but seems stuck. What do I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ASUS installer runs through multiple stages across several reboots after the initial file copy. As long as the screen shows activity (Cloud Recovery progress, Windows setup, etc.), leave it alone and let it finish. Only intervene if it has been completely stuck on a blank screen with no activity for more than 15 minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this on a ROG Ally with a replaced or upgraded SSD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The script automatically scales partition layout to fit the SSD size — it has been designed to work dynamically on 512GB, 1TB, and 2TB+ drives without any changes needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after the recovery script finishes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The device will boot into ASUS Cloud Recovery installer, exactly as it would when you normally perform Online Cloud Recovery. From there ASUS installer scripts handle the rest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a keyboard or mouse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, both are optional. The recovery USB already includes the necessary drivers to navigate using the Ally's built-in joystick and face buttons — the right stick acts as a cursor, A is ENTER, and B is ESC, just like in normal desktop mode. This means all you need is a 32GB+ USB drive and a USB Type-C OTG adapter to plug it in — no keyboard, mouse, or USB hub required. Make sure your Ally's battery has at least 50% charge before starting the recovery."
       }
     }
   ]
@@ -84,6 +172,7 @@
     <a href="about">About</a>
     <a href="faq" class="active">FAQ</a>
     <a href="guide">Guide</a>
+    <a href="contributors">Contributors</a>
   </nav>
   <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
     <span class="hamburger-line"></span>
