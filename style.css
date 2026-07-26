@@ -833,6 +833,27 @@
     transform:translateY(-45px) scaleY(1.1);
   }
 
+  .card-codename{
+    position:absolute;
+    bottom:32px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'ROG Font', sans-serif;
+    font-size:28px;
+    font-weight:400;
+    color:rgba(255,255,255,0.06);
+    pointer-events:none;
+    user-select:none;
+    letter-spacing:0.04em;
+    line-height:1;
+    z-index:3;
+    transition:color 0.3s ease;
+  }
+
+  .download-card:hover .card-codename{
+    color:rgba(255,255,255,0.12);
+  }
+
   .card-img{
     width:92%;
     height:92%;
