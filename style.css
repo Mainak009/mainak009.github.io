@@ -872,6 +872,7 @@
     display:flex;
     flex-direction:column;
     gap:16px;
+    flex:1;
   }
 
   .card-badge{
@@ -903,9 +904,20 @@
 
   .card-footer{
     display:flex;
-    align-items:center;
+    flex-direction:column;
+    gap:12px;
+    margin-top:auto;
+    height:100%;
     justify-content:space-between;
-    margin-top:4px;
+  }
+
+  .card-meta-row{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+    width:100%;
+    min-height:36px;
   }
 
   .card-maintainer{
@@ -925,6 +937,49 @@
     font-size:14px;
     color:var(--text-1);
     font-weight:500;
+    line-height:1.2;
+  }
+
+  .card-contributor{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line);
+    padding:3px 8px;
+    border-radius:6px;
+    font-size:10px;
+    white-space:nowrap;
+    align-self:flex-start;
+  }
+
+  .contributor-label{
+    font-size:9px;
+    color:var(--text-3);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+
+  .contributor-dot{
+    color:var(--cyan);
+    font-weight:700;
+    font-size:9px;
+  }
+
+  .contributor-name{
+    font-size:11px;
+    color:var(--text-1);
+    font-weight:600;
+  }
+
+  .card-actions-row{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:8px;
+    width:100%;
+    margin-top:auto;
   }
 
   .btn-download{

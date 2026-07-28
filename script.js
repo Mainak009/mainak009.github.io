@@ -138,19 +138,88 @@ const visual = document.getElementById('visual');
     });
   }
 
-  // Download Modal Logic for available device
-  const downloadBtn = document.getElementById('ally2023Download');
+  // Download Modal Logic for available devices
   const modalOverlay = document.getElementById('downloadModal');
   const modalCloseBtn = document.getElementById('modalClose');
 
-  if (downloadBtn && modalOverlay) {
-    downloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modalOverlay.classList.add('active');
-      modalOverlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden'; // Lock background scrolling
-    });
+  const downloadData = {
+    ally2023: {
+      deviceName: 'ROG Ally 2023',
+      fileName: 'EverAlly_AllyOG_28072026_X64W11_24H2_CR-ISO_COMM_03.05.iso',
+      huggingface: 'https://huggingface.co/buckets/Mainak0009/EverAlly/resolve/AllyOG/EverAlly_AllyOG_28072026_X64W11_24H2_CR-ISO_COMM_03.05.iso?download=true',
+      archive: 'https://archive.org/download/everally-allyog-z1-z1e-rc71l-offline-cloud-recovery-iso/EverAlly_AllyOG_28072026_X64W11_24H2_CR-ISO_COMM_03.05.iso',
+      sha256: '57A2153067C144C8201994978B9BF3DB95F58DF4B0827225F98BFE5ADC106AB0',
+      sha1: '49BBF7EED48F73F4B63A195AE1EAA78138E35E6F',
+      md5: 'C4C841E0AE424D4FEEE0A7BEF1F803E9',
+      fileSize: '24.47 GB'
+    },
+    allyX2024: {
+      deviceName: 'ROG Ally X 2024',
+      fileName: 'EverAlly_AllyX_28072026_X64W11_25H2_CR-ISO_COMM_01.06.iso',
+      huggingface: 'https://huggingface.co/buckets/Mainak0009/EverAlly/resolve/AllyX/EverAlly_AllyX_28072026_X64W11_25H2_CR-ISO_COMM_01.06.iso?download=true',
+      archive: 'https://archive.org/download/everally-allyx-rc72la-offline-cloud-recovery-iso/EverAlly_AllyX_28072026_X64W11_25H2_CR-ISO_COMM_01.06.iso',
+      sha256: 'F4F709B96D94C4DB0F605E9F6A89495336CA0380C6CCEE31BCD2D7176209DA20',
+      sha1: '84AB56773B937399FDDEE08C28B7A64D87793143',
+      md5: '4091E0A15C2DA00065BA2FB4E474D5B0',
+      fileSize: '21.26 GB'
+    }
+  };
 
+  function populateAndOpenModal(key) {
+    const data = downloadData[key];
+    if (!data || !modalOverlay) return;
+
+    const deviceNameEl = document.getElementById('modalDeviceName');
+    const mirrorHfEl = document.getElementById('mirrorHuggingface');
+    const mirrorArcEl = document.getElementById('mirrorArchive');
+    const sha256El = document.getElementById('checksumSha256');
+    const sha1El = document.getElementById('checksumSha1');
+    const md5El = document.getElementById('checksumMd5');
+    const footerEl = document.getElementById('modalFooter');
+
+    if (deviceNameEl) deviceNameEl.textContent = data.deviceName;
+    if (mirrorHfEl) mirrorHfEl.href = data.huggingface;
+    if (mirrorArcEl) mirrorArcEl.href = data.archive;
+
+    if (sha256El) {
+      sha256El.textContent = data.sha256;
+      sha256El.onclick = () => navigator.clipboard.writeText(data.sha256).then(() => showToast('SHA-256 copied!'));
+    }
+    if (sha1El) {
+      sha1El.textContent = data.sha1;
+      sha1El.onclick = () => navigator.clipboard.writeText(data.sha1).then(() => showToast('SHA-1 copied!'));
+    }
+    if (md5El) {
+      md5El.textContent = data.md5;
+      md5El.onclick = () => navigator.clipboard.writeText(data.md5).then(() => showToast('MD5 copied!'));
+    }
+    if (footerEl) {
+      footerEl.innerHTML = `<div style="margin-bottom: 6px; word-break: break-all;">File name: <strong>${data.fileName}</strong></div><div>File size: <strong>${data.fileSize}</strong> · Format: <strong>ISO Image</strong></div>`;
+    }
+
+    modalOverlay.classList.add('active');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Lock background scrolling
+  }
+
+  const ally2023Btn = document.getElementById('ally2023Download');
+  const allyX2024Btn = document.getElementById('allyX2024Download');
+
+  if (ally2023Btn) {
+    ally2023Btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      populateAndOpenModal('ally2023');
+    });
+  }
+
+  if (allyX2024Btn) {
+    allyX2024Btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      populateAndOpenModal('allyX2024');
+    });
+  }
+
+  if (modalOverlay) {
     const closeModal = () => {
       modalOverlay.classList.remove('active');
       modalOverlay.setAttribute('aria-hidden', 'true');
