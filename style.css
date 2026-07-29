@@ -349,6 +349,9 @@
     gap:7px;
     white-space:nowrap;
     width:100%;
+  }
+
+  .models-supported-item .value{
     overflow:hidden;
   }
 
@@ -699,6 +702,9 @@
   }
   .box:nth-child(3) {
     animation-delay: 0.34s;
+  }
+  .box:nth-child(4) {
+    animation-delay: 0.46s;
   }
 
   .box-meta{
@@ -1973,6 +1979,7 @@
   position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
+  overflow: visible !important;
 }
 
 .status-item .value {
