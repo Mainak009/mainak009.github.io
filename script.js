@@ -286,3 +286,34 @@ const visual = document.getElementById('visual');
       });
     });
   }
+
+  // Models Supported Auto-Scroll (Forward & Backward Marquee)
+  function initMarquee() {
+    const marqueeBox = document.querySelector('.marquee-box');
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (!marqueeBox || !marqueeContent) return;
+
+    function updateMarquee() {
+      // Temporarily remove animation to measure true untransformed layout widths
+      marqueeContent.classList.remove('animate-marquee');
+      marqueeContent.style.transform = 'none';
+
+      const contentWidth = marqueeContent.offsetWidth || marqueeContent.scrollWidth;
+      const boxWidth = marqueeBox.offsetWidth || marqueeBox.clientWidth;
+      const overflow = contentWidth - boxWidth;
+
+      if (overflow > 4) {
+        marqueeContent.style.setProperty('--scroll-dist', `-${Math.ceil(overflow)}px`);
+        void marqueeContent.offsetWidth; // Force reflow
+        marqueeContent.classList.add('animate-marquee');
+      } else {
+        marqueeContent.style.transform = 'translateX(0)';
+      }
+    }
+
+    updateMarquee();
+    setTimeout(updateMarquee, 150);
+    window.addEventListener('resize', updateMarquee);
+  }
+
+  initMarquee();

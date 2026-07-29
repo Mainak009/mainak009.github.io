@@ -310,13 +310,23 @@
     background:rgba(255,255,255,0.015);
     padding:16px 20px;
     display:flex;
-    gap:16px 24px;
+    flex-wrap:nowrap;
+    align-items:center;
+    gap:16px 28px;
   }
 
   .status-item{
     display:flex;
     flex-direction:column;
     gap:4px;
+    flex:0 0 auto;
+  }
+
+  .status-item.models-supported-item{
+    flex:1 1 0%;
+    min-width:0;
+    width:100%;
+    overflow:hidden;
   }
 
   .status-item .label{
@@ -325,6 +335,7 @@
     text-transform:uppercase;
     color:var(--text-3);
     font-weight:600;
+    white-space:nowrap;
   }
 
   .status-item .value{
@@ -336,6 +347,36 @@
     display:flex;
     align-items:center;
     gap:7px;
+    white-space:nowrap;
+    width:100%;
+    overflow:hidden;
+  }
+
+  .marquee-box{
+    overflow:hidden;
+    white-space:nowrap;
+    width:100%;
+    flex:1;
+    min-width:0;
+  }
+
+  .marquee-content{
+    display:inline-block;
+    white-space:nowrap;
+    will-change:transform;
+  }
+
+  .marquee-content.animate-marquee{
+    animation:marquee-scroll-alternate 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes marquee-scroll-alternate{
+    0%, 15%{
+      transform:translateX(0);
+    }
+    85%, 100%{
+      transform:translateX(var(--scroll-dist, 0px));
+    }
   }
 
   .value.ok::before{
@@ -345,6 +386,7 @@
     background:#4fd88a;
     box-shadow:0 0 6px #4fd88a;
     display:inline-block;
+    flex-shrink:0;
   }
 
   .value.off::before{
@@ -354,6 +396,8 @@
     background:#2b2c3a;
     box-shadow:none;
     display:inline-block;
+    flex-shrink:0;
+    margin-top:6px;
   }
 
   /* ---- visual side (right): dual console showcase ---- */
@@ -1183,6 +1227,13 @@
     animation-delay: 0.64s;
   }
 
+  .download-card:nth-child(5) {
+    animation-delay: 0.58s;
+  }
+  .download-card:nth-child(5) .card-img-wrapper {
+    animation-delay: 0.76s;
+  }
+
   /* Cursor-following Tooltip for Unavailable Devices */
   .cursor-tooltip {
     position: fixed;
@@ -1920,7 +1971,7 @@
 }
 
 .status-item .value {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 @media (max-width: 880px) {
