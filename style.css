@@ -620,6 +620,11 @@
     .status{
       flex-wrap:wrap;
     }
+
+    .status-item.models-supported-item {
+      flex:1 0 100%;
+      width:100%;
+    }
   }
 
   @media (prefers-reduced-motion: reduce){
