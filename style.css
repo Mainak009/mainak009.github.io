@@ -1185,7 +1185,9 @@
 
   /* Cursor-following Tooltip for Unavailable Devices */
   .cursor-tooltip {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 320px;
     max-width: calc(100vw - 20px);
     background: rgba(17, 17, 23, 0.95);

@@ -90,24 +90,24 @@ const visual = document.getElementById('visual');
           const tooltipWidth = tooltip.offsetWidth || 320;
           const tooltipHeight = tooltip.offsetHeight || 100;
 
-          let x = e.pageX + 15;
-          let y = e.pageY + 15;
+          let x = e.clientX + 15;
+          let y = e.clientY + 15;
 
           // Prevent tooltip from overflowing the right of screen
-          if (e.clientX + 15 + tooltipWidth > window.innerWidth) {
-            x = e.pageX - tooltipWidth - 15;
+          if (x + tooltipWidth > window.innerWidth - 10) {
+            x = e.clientX - tooltipWidth - 15;
           }
           // Prevent tooltip from overflowing the left of screen
-          if (x - window.scrollX < 10) {
-            x = window.scrollX + 10;
+          if (x < 10) {
+            x = 10;
           }
           // Prevent tooltip from overflowing the bottom of screen
-          if (e.clientY + 15 + tooltipHeight > window.innerHeight) {
-            y = e.pageY - tooltipHeight - 15;
+          if (y + tooltipHeight > window.innerHeight - 10) {
+            y = e.clientY - tooltipHeight - 15;
           }
           // Prevent tooltip from overflowing the top of screen
-          if (y - window.scrollY < 10) {
-            y = window.scrollY + 10;
+          if (y < 10) {
+            y = 10;
           }
 
           tooltip.style.left = `${x}px`;
