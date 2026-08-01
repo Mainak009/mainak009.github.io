@@ -194,10 +194,17 @@
             <li><strong>Interrupt Reboot:</strong> Once the download completes, the system will auto-reboot. To prevent it from booting into the OS, hold the <strong>Volume Up</strong> button during the startup animation to access the Boot Menu. Select and boot from your Rescuezilla USB.</li>
             <li><strong>Perform Backup:</strong> After booting into Rescuezilla follow the instructions in the video walkthrough below to create a full image backup of your internal SSD to your external storage or a local NAS.
               <div class="video-container">
-                <video controls preload="metadata">
+                <video id="tutorialVideo" controls preload="none" poster="images/Ally%20Rescuezilla%20Backup.webp">
                   <source src="video/Ally%20Rescuezilla%20Backup.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
+                <div id="playOverlay" class="video-play-overlay">
+                  <div class="play-btn-circle">
+                    <svg viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </li>
           </ol>

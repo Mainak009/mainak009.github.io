@@ -317,3 +317,21 @@ const visual = document.getElementById('visual');
   }
 
   initMarquee();
+
+  // Video Play Overlay Logic
+  const tutorialVideo = document.getElementById('tutorialVideo');
+  const playOverlay = document.getElementById('playOverlay');
+
+  if (tutorialVideo && playOverlay) {
+    playOverlay.addEventListener('click', () => {
+      tutorialVideo.play();
+    });
+
+    tutorialVideo.addEventListener('play', () => {
+      playOverlay.classList.add('hidden');
+    });
+
+    tutorialVideo.addEventListener('pause', () => {
+      playOverlay.classList.remove('hidden');
+    });
+  }
